@@ -40,7 +40,7 @@ The two possible values for --tagger option are:
 
 * `brill` for the Brill POS Tagger
 
-The assignment's training data can be found in [data/train.txt](data/train.txt), the in-domain test data can be found in [data/test.txt](data/test.txt), and the out-of-domain test data can be found in [data/test_ood.txt](data/test_ood.txt). 
+The training data can be found in [data/train.txt](data/train.txt), the in-domain test data can be found in [data/test.txt](data/test.txt), and the out-of-domain test data can be found in [data/test_ood.txt](data/test_ood.txt). 
 
 The output file must be generated in the [output/](output/) directory.
 
