@@ -1,12 +1,7 @@
-# Intro to NLP - Assignment 4
+# NLP: Hidden Markov Model (HMM) POS Tagger and Brill Tagger
 
-In this assignment, our aim is to tune, compare, and contrast the performance of the Hidden Markov Model (HMM) POS tagger and the Brill POS tagger.
+In this project, our aim is to tune, compare, and contrast the performance of the Hidden Markov Model (HMM) POS tagger and the Brill POS tagger.
 To perform this task, we will train these two taggers using data from a specific domain and test their accuracy in predicting tag sequences from data belonging to the same domain and data from a different domain.
-
-## Team
-|Student name| CCID |
-|------------|------|
-|Chirag Daryani   |  cdaryani    |
 
 
 ## 3-rd Party Libraries
@@ -24,7 +19,7 @@ To run this project,
 3. Open Terminal in the directory you extracted the project folder to. 
 4. Change directory to the project folder using:
 
-    `cd f2021-asn4-chiragdaryani-main`
+    `cd part-of-speech-taggers-main`
 5. Install the required libraries, **NLTK** and **scikit-learn** using the following commands:
 
     `pip3 install nltk`
@@ -81,8 +76,3 @@ https://www.nltk.org/_modules/nltk/tag/brill.html
 https://www.geeksforgeeks.org/nlp-brill-tagger/
 
 https://www.nltk.org/howto/probability.html
-
-## Acknowledgement 
-In accordance with the UofA Code of Student Behaviour, we acknowledge that  
-
-- We have listed all external resources we consulted for this assignment.
