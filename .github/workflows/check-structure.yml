@@ -1,0 +1,46 @@
+name: pre-submission-checks
+on: [push]
+jobs:
+  test-runs:
+    runs-on: [self-hosted, linux]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Go to repo directory
+        run: cd $GITHUB_WORKSPACE
+      - name: Check README
+        run: test -f README.md 
+      - name: Check src/main.py
+        run: test -f src/main.py
+      - name: Check output/test_hmm.txt
+        run: test -f output/test_hmm.txt
+      - name: Check output/test_ood_hmm.txt
+        run: test -f output/test_ood_hmm.txt
+      - name: Check output/test_brill.txt
+        run: test -f output/test_brill.txt
+      - name: Check output/test_ood_brill.txt
+        run: test -f output/test_ood_brill.txt
+      - name: Check report.pdf
+        run: test -f report.pdf
+      - name: Install dependencies
+        run: |
+          if test -f "requirements.txt"; then
+              python3 -m pip install --user -r requirements.txt
+          else 
+              python3 -m pip install nltk pandas regex
+          fi
+      - name: Run hmm
+        run: python3 src/main.py --tagger hmm --train data/train.txt --test data/test.txt --output output/test_hmm-cicd.txt
+      - name: Run brill
+        run: python3 src/main.py --tagger brill --train data/train.txt --test data/test.txt --output output/test_brill-cicd.txt
+      - name: Run hmm ood
+        run: python3 src/main.py --tagger hmm --train data/train.txt --test data/test_ood.txt --output output/test_ood_hmm-cicd.txt
+      - name: Run brill ood
+        run: python3 src/main.py --tagger brill --train data/train.txt --test data/test_ood.txt --output output/test_ood_brill-cicd.txt
+      - name: Check output/test_hmm-cicd.txt
+        run: test -f output/test_hmm-cicd.txt
+      - name: Check output/test_ood_hmm-cicd.txt
+        run: test -f output/test_ood_hmm-cicd.txt
+      - name: Check output/test_brill-cicd.txt
+        run: test -f output/test_brill-cicd.txt
+      - name: Check output/test_ood_brill-cicd.txt
+        run: test -f output/test_ood_brill-cicd.txt
