@@ -1,14 +1,7 @@
-# NLP: Hidden Markov Model (HMM) POS Tagger and Brill Tagger
+# Part of Speech Tagging using Hidden Markov Model (HMM) POS Tagger and Brill Tagger
 
 In this project, our aim is to tune, compare, and contrast the performance of the Hidden Markov Model (HMM) POS tagger and the Brill POS tagger.
 To perform this task, we will train these two taggers using data from a specific domain and test their accuracy in predicting tag sequences from data belonging to the same domain and data from a different domain.
-
-
-## 3-rd Party Libraries
-Apart from `nltk` and `pandas`, we have used the following 3rd party libraries:
-
-* `main.py L:355` used **`scikit-learn`** for splitting the dataset into train set and cross validation set.
-
 
 ## How to Execute?
 
